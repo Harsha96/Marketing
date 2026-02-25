@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 10% 6%;
+    --foreground: 40 20% 92%;
+
+    --card: 30 8% 10%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 30 8% 10%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 40 60% 55%;
+    --primary-foreground: 30 10% 6%;
+
+    --secondary: 30 8% 14%;
+    --secondary-foreground: 40 20% 85%;
+
+    --muted: 30 6% 16%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 40 60% 55%;
+    --accent-foreground: 30 10% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 8% 18%;
+    --input: 30 8% 18%;
+    --ring: 40 60% 55%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 30 10% 4%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 40 60% 55%;
+    --sidebar-primary-foreground: 30 10% 6%;
+    --sidebar-accent: 30 8% 14%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 30 8% 18%;
+    --sidebar-ring: 40 60% 55%;
+
+    font-family: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 30 10% 6%;
+    --foreground: 40 20% 92%;
+    --card: 30 8% 10%;
+    --card-foreground: 40 20% 92%;
+    --popover: 30 8% 10%;
+    --popover-foreground: 40 20% 92%;
+    --primary: 40 60% 55%;
+    --primary-foreground: 30 10% 6%;
+    --secondary: 30 8% 14%;
+    --secondary-foreground: 40 20% 85%;
+    --muted: 30 6% 16%;
+    --muted-foreground: 30 10% 55%;
+    --accent: 40 60% 55%;
+    --accent-foreground: 30 10% 6%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 8% 18%;
+    --input: 30 8% 18%;
+    --ring: 40 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-display {
+    font-family: 'Playfair Display', serif;
+    @apply text-5xl md:text-7xl lg:text-8xl font-bold leading-[1] tracking-tight;
+  }
+
+  .text-heading {
+    font-family: 'Playfair Display', serif;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1];
+  }
+
+  .text-subheading {
+    font-family: 'Playfair Display', serif;
+    @apply text-xl md:text-2xl font-medium leading-tight;
+  }
+
+  .text-label {
+    @apply text-xs uppercase tracking-[0.25em] font-medium text-primary;
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-20 xl:px-28;
+  }
+
+  .section-gap {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .gold-line {
+    @apply w-12 h-px bg-primary;
+  }
+
+  .hover-gold {
+    @apply transition-colors duration-300 hover:text-primary;
+  }
+}
