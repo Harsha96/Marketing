@@ -1,16 +1,17 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Twitter, Linkedin, Link as LinkIcon, Facebook } from "lucide-react";
-import { posts } from "@/components/BlogSection";
+import { getAllPosts } from "@/components/BlogSection";
 import DudoNavbar from "@/components/DudoNavbar";
 import { useEffect } from "react";
 
 const BlogPost = () => {
     const { slug } = useParams<{ slug: string }>();
-    const post = posts.find((p) => p.slug === slug);
+    const allPosts = getAllPosts();
+    const post = allPosts.find((p) => p.slug === slug);
 
     // Get other posts for the "Related" section
-    const relatedPosts = posts.filter((p) => p.slug !== slug).slice(0, 2);
+    const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
     useEffect(() => {
         window.scrollTo(0, 0);
