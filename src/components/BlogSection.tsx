@@ -20,55 +20,62 @@ export interface BlogPost {
 
 const CORE_POSTS: BlogPost[] = [
   {
-    title: "5 Video Trends Shaping Luxury Hospitality in 2026",
-    slug: "video-trends-luxury-hospitality",
-    category: "Video Production",
+    title: "Best Beachfront Villas in Mirissa for a Private Getaway",
+    slug: "best-beachfront-villas-mirissa",
+    category: "Luxury Travel",
     date: "Feb 12, 2026",
     publishDate: "2026-02-12",
-    readTime: "6 min read",
-    tags: ["Video", "Hospitality", "Luxury"],
-    excerpt: "How cinematic content is transforming how travelers discover and book boutique properties.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-    fullContent: "The landscape of luxury hospitality is evolving rapidly. In 2026, potential guests are no longer just looking for a room; they are looking for an experience. Cinematic video content has become the primary tool for boutique properties to showcase their unique narrative. From first-person POV tours to high-production emotional storytelling, video is the bridge between discovery and booking. We've seen a 40% increase in direct bookings for clients who lean into immersive video trends.",
+    readTime: "7 min read",
+    tags: ["Mirissa", "Villas", "Beachfront"],
+    excerpt: "Discover the most exclusive beachfront villas in Mirissa, where ultimate privacy meets the rhythmic sounds of the Indian Ocean.",
+    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&q=80&w=1200",
+    fullContent: "Mirissa is no longer just a backpacker's stop; it has evolved into a premier destination for luxury seekers. The coastline is now dotted with architectural marvels that offer seamless indoor-outdoor living. From colonial-inspired estates to contemporary glass-fronted villas, our curated list explores the properties that define luxury in the south. \n\nWe look at amenities like private chefs, infinity pools that blend into the horizon, and direct access to secret coves that make Mirissa beachfront living so unique. Whether you are planning a romantic retreat or a large family gathering, these villas provide the perfect canvas for your Sri Lankan adventure.",
     status: 'Published'
   },
   {
-    title: "Building a Social Strategy for Boutique Hotels",
-    slug: "social-strategy-boutique-hotels",
-    category: "Social Media",
+    title: "Surf & Stay: Villas Near Unawatuna’s Top Surf Spots",
+    slug: "unawatuna-surf-villas-guide",
+    category: "Surf & Vibe",
     date: "Feb 15, 2026",
     publishDate: "2026-02-15",
-    readTime: "8 min read",
-    tags: ["Social Media", "Strategy", "Marketing"],
-    excerpt: "A step-by-step guide to creating engagement-driven content that converts followers into guests.",
-    image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&q=80&w=800",
-    fullContent: "Social media is the new concierge. For boutique hotels, a strong social strategy isn't just about posting pretty pictures; it's about building community. This guide explores how to leverage user-generated content, real-time engagement, and strategic influencer partnerships to create a digital presence that feels as welcoming as your physical lobby. Learn how to turn 'likes' into check-ins through authenticated storytelling and consistent brand voice.",
+    readTime: "6 min read",
+    tags: ["Unawatuna", "Surfing", "Stay"],
+    excerpt: "A guide to the best coastal retreats in Unawatuna that put you just steps away from the island's legendary breaks.",
+    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1200",
+    fullContent: "Unawatuna offers a unique blend of energetic surf culture and serene villa living. For those who live by the tide, staying close to the break is essential. In this guide, we highlight villas that offer more than just a bed; they offer a lifestyle. \n\nExpect outdoor showers for rinsing off the salt, secure board storage, and terraces built for watching the swell from the comfort of your lounge. We cover the top spots for both beginners and seasoned surfers, ensuring your stay in Unawatuna is as thrilling as it is relaxing. From the iconic Main Break to the hidden gems further down the coast, your perfect surf base awaits.",
     status: 'Published'
   },
   {
-    title: "The Power of Drone Photography in Property Marketing",
-    slug: "power-drone-photography",
-    category: "Photography",
+    title: "Luxury Villas in Hikkaduwa with Stunning Ocean Views",
+    slug: "luxury-hikkaduwa-villas-ocean-view",
+    category: "Boutique Stays",
     date: "Feb 20, 2026",
     publishDate: "2026-02-20",
     readTime: "5 min read",
-    tags: ["Photography", "Drone", "Real Estate"],
-    excerpt: "Why aerial imagery has become essential for showcasing villa and hotel properties online.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
-    fullContent: "Perspective is everything. Drone photography has revolutionized property marketing by providing a scale and context that ground-level photos simply cannot match. For luxury villas and expansive hotel grounds, aerial shots highlight the relationship between the architecture and its surrounding environment—whether it's a private beach or a mountain cliffside. This article dives into the technical and creative aspects of high-end drone photography for the hospitality sector.",
+    tags: ["Hikkaduwa", "Modern", "Ocean View"],
+    excerpt: "Experience the vibrant spirit of Hikkaduwa from the tranquility of your own private cliffside or beachside sanctuary.",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200",
+    fullContent: "Hikkaduwa remains a cornerstone of Sri Lankan tourism for a reason. Its vibrant coral reefs and lively strip are best enjoyed when you have a sophisticated retreat to return to. We've scouted the most impressive modern villas that maximize the dramatic views of the Indian Ocean. \n\nThese properties are defined by clean lines, local craftsmanship, and a commitment to high-end hospitality. Explore villas that feel like private resorts, complete with sprawling gardens, dedicated spa rooms, and sunset decks that offer front-row seats to the best light shows on the island. Discover why Hikkaduwa continues to lead the way in tropical luxury living.",
     status: 'Published'
   },
 ];
 
 const LOCAL_STORAGE_KEY = "werk-cms-posts";
 const DELETED_CORE_KEY = "werk-deleted-core";
+const LEGACY_SLUGS = ["video-trends-luxury-hospitality", "social-strategy-boutique-hotels", "power-drone-photography"];
 
 export const getAllPosts = (isAdmin = false): BlogPost[] => {
   if (typeof window === "undefined") return CORE_POSTS;
 
   // Load local posts
   const localData = localStorage.getItem(LOCAL_STORAGE_KEY);
-  const localPosts: BlogPost[] = localData ? JSON.parse(localData) : [];
+  let localPosts: BlogPost[] = localData ? JSON.parse(localData) : [];
+
+  // Auto-Cleanup: Remove legacy demo posts if they exist in local storage
+  if (localPosts.some(p => LEGACY_SLUGS.includes(p.slug))) {
+    localPosts = localPosts.filter(p => !LEGACY_SLUGS.includes(p.slug));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(localPosts));
+  }
 
   // Load deleted core slugs
   const deletedData = localStorage.getItem(DELETED_CORE_KEY);
@@ -95,7 +102,6 @@ export const getAllPosts = (isAdmin = false): BlogPost[] => {
 
   const today = new Date().toISOString().split('T')[0];
   return allPosts.filter(post => {
-    // For backward compatibility: if status is missing, assume Published
     const status = post.status || 'Published';
     return status === 'Published' && (post.publishDate || "0") <= today;
   });

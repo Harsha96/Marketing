@@ -23,18 +23,18 @@ const ContactCTA = () => {
           Get in touch to bring your villa, cafe, or hotel to life.
         </p>
         <p className="font-body text-foreground/80 mb-2">
-          Jeremy Koh, Founder
+          Shanika H., Founder
         </p>
         <a
-          href="mailto:jemkoh@dudostudio.com"
+          href="mailto:shanika@dudostudio.com"
           className="inline-flex items-center gap-2 font-body text-primary hover:text-primary/80 transition-colors duration-300 text-lg mb-10"
         >
           <Mail className="w-5 h-5" />
-          jemkoh@dudostudio.com
+          shanika@dudostudio.com
         </a>
         <div className="mt-4">
           <a
-            href="mailto:jemkoh@dudostudio.com"
+            href="mailto:shanika@dudostudio.com"
             className="inline-block font-body text-sm px-10 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300 tracking-wide"
           >
             Start a Project
