@@ -152,7 +152,7 @@ const BlogSection = () => {
   return (
     <section id="blog" ref={ref} className="section-padding section-gap border-t border-border/30">
       <motion.div
-        className="mb-16"
+        className="mb-8"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
@@ -185,7 +185,7 @@ const BlogSection = () => {
                 <h3 className="font-display text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {post.title}
                 </h3>
-                <p className="font-body text-sm text-muted-foreground mb-6 leading-relaxed">
+                <p className="font-body text-sm text-muted-foreground mb-3 leading-relaxed">
                   {post.excerpt}
                 </p>
                 <span className="inline-flex items-center gap-2 font-body text-sm text-primary group-hover:gap-3 transition-all duration-300">

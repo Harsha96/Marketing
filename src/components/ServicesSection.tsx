@@ -43,7 +43,7 @@ const ServicesSection = () => {
   return (
     <section id="services" ref={ref} className="section-padding section-gap border-t border-border/30">
       <motion.div
-        className="mb-16"
+        className="mb-8"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
@@ -56,15 +56,15 @@ const ServicesSection = () => {
         {services.map((service, i) => (
           <motion.div
             key={service.title}
-            className="group p-8 bg-card border border-border/30 hover:border-primary/30 transition-all duration-500"
+            className="group p-6 bg-card border border-border/30 hover:border-primary/30 transition-all duration-500"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 * i }}
           >
-            <div className="w-14 h-14 rounded-full border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+            <div className="w-14 h-14 rounded-full border border-primary/30 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors duration-500">
               <service.icon className="w-7 h-7 text-primary" strokeWidth={1.4} />
             </div>
-            <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-6">
+            <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-3">
               {service.title}
             </h3>
             <ul className="space-y-3">

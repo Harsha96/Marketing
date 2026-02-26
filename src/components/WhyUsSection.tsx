@@ -30,7 +30,7 @@ const WhyUsSection = () => {
   return (
     <section id="why-us" ref={ref} className="section-padding section-gap border-t border-border/30">
       <motion.div
-        className="mb-16"
+        className="mb-8"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
@@ -39,7 +39,7 @@ const WhyUsSection = () => {
         <h2 className="text-heading text-foreground">Why Us?</h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {reasons.map((reason, i) => (
           <motion.div
             key={reason.title}
@@ -47,7 +47,7 @@ const WhyUsSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 * i }}
           >
-            <div className="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-6">
+            <div className="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-4">
               <reason.icon className="w-8 h-8 text-primary" strokeWidth={1.2} />
             </div>
             <h3 className="font-display text-xl font-semibold text-foreground mb-3">{reason.title}</h3>

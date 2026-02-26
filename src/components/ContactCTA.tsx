@@ -14,20 +14,20 @@ const ContactCTA = () => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
       >
-        <div className="gold-line mx-auto mb-6" />
+        <div className="gold-line mx-auto mb-4" />
         <h2 className="text-heading text-foreground mb-4">
           Have an idea?<br />
           <span className="italic text-primary">Let's talk.</span>
         </h2>
-        <p className="font-body text-muted-foreground text-lg mb-8 leading-relaxed">
+        <p className="font-body text-muted-foreground text-lg mb-4 leading-relaxed">
           Get in touch to bring your villa, cafe, or hotel to life.
         </p>
         <p className="font-body text-foreground/80 mb-2">
-          Shanika H., Founder
+          Shanika H., Founder & CEO
         </p>
         <a
           href="mailto:shanika@dudostudio.com"
-          className="inline-flex items-center gap-2 font-body text-primary hover:text-primary/80 transition-colors duration-300 text-lg mb-10"
+          className="inline-flex items-center gap-2 font-body text-primary hover:text-primary/80 transition-colors duration-300 text-lg mb-6"
         >
           <Mail className="w-5 h-5" />
           shanika@dudostudio.com

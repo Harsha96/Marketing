@@ -3,14 +3,15 @@ import { useRef } from "react";
 import { MapPin } from "lucide-react";
 
 const cities = [
-  "Singapore",
-  "Bangkok",
-  "Shanghai",
-  "Helsinki",
-  "Ho Chi Minh",
-  "London",
-  "Los Angeles",
-  "New York",
+  "Ahangama",
+  "Habaraduwa",
+  "Mirissa",
+  "Hikkaduwa",
+  "Hiriketiya",
+  "Bentota",
+  "Colombo",
+  "Galle",
+  "Kandy",
 ];
 
 const ClientsSection = () => {
@@ -26,10 +27,10 @@ const ClientsSection = () => {
         className="text-center max-w-3xl mx-auto"
       >
         <p className="text-label mb-4">Our Clients</p>
-        <h2 className="text-heading text-foreground mb-6">
-          Trusted by hospitality brands worldwide
+        <h2 className="text-heading text-foreground mb-4">
+          Trusted by hospitality brands across the island
         </h2>
-        <p className="font-body text-muted-foreground mb-12 text-lg">
+        <p className="font-body text-muted-foreground mb-6 text-lg">
           We collaborate with boutique hotels, luxury villas, and cafes across the globe.
         </p>
       </motion.div>

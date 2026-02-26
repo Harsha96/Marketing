@@ -106,7 +106,7 @@ const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: 
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <div ref={ref} className={index > 0 ? "mt-28 md:mt-36 pt-20 border-t border-border/20" : ""}>
+    <div ref={ref} className={index > 0 ? "mt-8 md:mt-12 pt-8 border-t border-border/20" : ""}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -114,12 +114,12 @@ const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: 
       >
         <p className="text-label mb-4">{project.label}</p>
         <h2 className="text-heading mb-2 text-foreground">{project.title}</h2>
-        <p className="font-body text-muted-foreground mb-12 max-w-xl">{project.subtitle}</p>
+        <p className="font-body text-muted-foreground mb-6 max-w-xl">{project.subtitle}</p>
       </motion.div>
 
       {/* Gallery */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, delay: 0.2 }}
@@ -134,7 +134,7 @@ const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: 
       </motion.div>
 
       {/* Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -159,7 +159,7 @@ const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: 
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <h4 className="font-display text-lg font-semibold text-foreground mb-6">Results</h4>
-          <div className="space-y-8">
+          <div className="space-y-5">
             {project.results.map((r) => (
               <div key={r.label} className="border-l-2 border-primary pl-6">
                 <p className="font-display text-4xl md:text-5xl font-bold text-primary mb-1">
