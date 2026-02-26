@@ -32,7 +32,7 @@ const projects = [
   {
     label: "Featured Work",
     title: "Villa Lumière",
-    subtitle: "Brand Launch & Content Creation — Branding | Video Production | Social Media Strategy",
+    subtitle: "Brand Launch & Content Creation: Branding | Video Production | Social Media Strategy",
     images: [
       { src: villaExterior, alt: "Villa Lumière exterior at twilight", span: "md:col-span-2" },
       { src: villaInterior, alt: "Villa Lumière interior with warm lighting" },
@@ -55,7 +55,7 @@ const projects = [
   {
     label: "Case Study",
     title: "Maison Café",
-    subtitle: "Brand Identity & Digital Launch — Branding | Social Media | Photography",
+    subtitle: "Brand Identity & Digital Launch: Branding | Social Media | Photography",
     images: [
       { src: cafeInterior, alt: "Maison Café interior", span: "md:col-span-2" },
       { src: foodStyling, alt: "Artisan food styling" },
@@ -78,7 +78,7 @@ const projects = [
   {
     label: "Case Study",
     title: "The Silk Hotel",
-    subtitle: "Digital Repositioning — Video | Web Design | Paid Media",
+    subtitle: "Digital Repositioning: Video | Web Design | Paid Media",
     images: [
       { src: hotelRooftop, alt: "Rooftop bar at sunset", span: "md:col-span-2" },
       { src: resortPool, alt: "Resort infinity pool" },

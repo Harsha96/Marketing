@@ -7,13 +7,13 @@ const reasons = [
     icon: Earth,
     title: "Hospitality Focused, Globally Minded",
     description:
-      "We know villas, cafes, and hotels inside out. Our team blends creative storytelling with marketing expertise to make your property stand out—online and offline.",
+      "We know villas, cafes, and hotels inside out. Our team blends creative storytelling with marketing expertise to make your property stand out online and offline.",
   },
   {
     icon: Sparkles,
     title: "Specialist Efficiency",
     description:
-      "From drone operators to filmmakers and social strategists, we assemble a lean, expert team for each project—no wasted overheads, just results.",
+      "From drone operators to filmmakers and social strategists, we assemble a lean, expert team for each project: no wasted overheads, just results.",
   },
   {
     icon: HandshakeIcon,

@@ -17,7 +17,7 @@ const Testimonial = () => {
           "Online sales have grown crazy, from 2 to 18% of our total revenue"
         </blockquote>
         <p className="font-body text-muted-foreground text-lg">
-          — Flight Coffee
+          Flight Coffee
         </p>
       </motion.div>
     </section>
