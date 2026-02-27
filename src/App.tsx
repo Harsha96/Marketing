@@ -8,7 +8,9 @@ import BlogPost from "./pages/BlogPost";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminEditor from "./pages/AdminEditor";
+import CaseStudy from "./pages/CaseStudy";
 import NotFound from "./pages/NotFound";
+
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/work/:slug" element={<CaseStudy />} />
+
 
           {/* Admin / CMS Routes */}
           <Route path="/cms" element={<AdminLogin />} />

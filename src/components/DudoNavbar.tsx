@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Showreel", href: "#showreel" },
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Clients", href: "#clients" },
-  { label: "Blog", href: "#blog" },
+  { label: "Showreel", href: "/#showreel" },
+  { label: "Work", href: "/#work" },
+  { label: "Services", href: "/#services" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Clients", href: "/#clients" },
+  { label: "Blog", href: "/#blog" },
 ];
+
 
 const DudoNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ const DudoNavbar = () => {
           </a>
         ))}
         <a
-          href="#contact"
+          href="/#contact"
           className="font-body text-sm px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
         >
           Contact
@@ -67,12 +68,13 @@ const DudoNavbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               className="font-body text-lg text-primary"
               onClick={() => setIsOpen(false)}
             >
               Contact
             </a>
+
           </motion.div>
         )}
       </AnimatePresence>

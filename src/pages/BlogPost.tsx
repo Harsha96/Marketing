@@ -46,11 +46,12 @@ const BlogPost = () => {
                                 className="flex items-center gap-4 mb-8"
                             >
                                 <Link
-                                    to="/"
+                                    to="/#blog"
                                     className="group flex items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary transition-colors tracking-widest uppercase"
                                 >
-                                    <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" /> Back
+                                    <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" /> Back to Blog
                                 </Link>
+
                                 <span className="w-1 h-1 rounded-full bg-border/50" />
                                 <span className="text-xs font-medium text-primary tracking-widest uppercase">{post.category}</span>
                             </motion.div>

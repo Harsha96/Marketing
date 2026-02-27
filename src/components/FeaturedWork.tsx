@@ -1,12 +1,8 @@
 import { motion, useInView, animate } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import villaInterior from "@/assets/villa-interior.jpg";
-import villaExterior from "@/assets/villa-exterior.jpg";
-import brandingFlatlay from "@/assets/branding-flatlay.jpg";
-import cafeInterior from "@/assets/cafe-interior.jpg";
-import hotelRooftop from "@/assets/hotel-rooftop.jpg";
-import foodStyling from "@/assets/food-styling.jpg";
-import resortPool from "@/assets/resort-pool.jpg";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { projects } from "@/data/projects";
 
 /* ─── Animated Counter ─── */
 const CountUp = ({ target, suffix = "", duration = 2 }: { target: number; suffix?: string; duration?: number }) => {
@@ -27,58 +23,6 @@ const CountUp = ({ target, suffix = "", duration = 2 }: { target: number; suffix
   return <span ref={ref}>{display}{suffix}</span>;
 };
 
-/* ─── Project Data ─── */
-const projects = [
-  {
-    label: "Social Media | Booking Platforms | Business Strategy",
-    title: "Celanka Resort – Kandy",
-    subtitle: "Art Direction & Strategy: Celanka Resort is a calm retreat in the heart of Kandy. We partnered with the team to build a smooth guest journey, from online discovery to on-property experience.",
-    images: [
-      { src: resortPool, alt: "Celanka Resort infinity pool", span: "md:col-span-2" },
-      { src: villaInterior, alt: "Luxury suite interior" },
-      { src: villaExterior, alt: "Resort exterior" },
-    ],
-    approach: {
-      heading: "Art Direction & Strategy",
-      description: "Celanka Resort is a calm retreat in the heart of Kandy. We partnered with the team to build a smooth guest journey, from online discovery to on-property experience.",
-      items: [
-        "Structured guest experience guidelines",
-        "Managed social media presence with consistent, calming visuals",
-        "Optimized and managed listings on Airbnb, Agoda & Booking.com",
-        "Set up and managed Google Business Profile for visibility and reviews",
-        "Guided reservation flow and guest communication standards",
-      ],
-    },
-    results: [
-      { text: "Stronger booking consistency across platforms" },
-      { text: "Improved guest experience and reviews" },
-      { text: "Clear operational structure for daily management" },
-    ],
-  },
-  {
-    label: "Drone Video | Photography",
-    title: "Peaceful Paradise Villa – Hanthana",
-    subtitle: "Art Direction & Visual Storytelling: Nestled in the hills of Hanthana, Peaceful Paradise Villa offers breathtaking views and quiet luxury. We focused on capturing the feeling of space, nature, and calm.",
-    images: [
-      { src: villaExterior, alt: "Peaceful Paradise Villa exterior", span: "md:col-span-2" },
-      { src: villaInterior, alt: "Villa interior view" },
-      { src: brandingFlatlay, alt: "Visual storytelling content" },
-    ],
-    approach: {
-      heading: "Art Direction & Visual Storytelling",
-      description: "Nestled in the hills of Hanthana, Peaceful Paradise Villa offers breathtaking views and quiet luxury. We focused on capturing the feeling of space, nature, and calm.",
-      items: [
-        "Cinematic drone coverage showcasing landscape and surroundings",
-        "Lifestyle and property photography for digital platforms",
-        "Visual content crafted for social media and booking platforms",
-      ],
-    },
-    results: [
-      { text: "High-impact visual assets for online listings" },
-    ],
-  },
-];
-
 /* ─── Single Project Block ─── */
 const ProjectBlock = ({ project, index }: { project: any; index: number }) => {
   const ref = useRef(null);
@@ -92,7 +36,15 @@ const ProjectBlock = ({ project, index }: { project: any; index: number }) => {
         transition={{ duration: 0.7 }}
       >
         <p className="text-label mb-4">{project.label}</p>
-        <h2 className="text-heading mb-2 text-foreground">{project.title}</h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-2">
+          <h2 className="text-heading text-foreground">{project.title}</h2>
+          <Link
+            to={`/work/${project.slug}`}
+            className="group inline-flex items-center gap-2 text-primary font-display font-medium text-lg hover:gap-3 transition-all duration-300"
+          >
+            View Case Study <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
         <p className="font-body text-muted-foreground mb-6 max-w-xl">{project.subtitle}</p>
       </motion.div>
 
@@ -103,12 +55,16 @@ const ProjectBlock = ({ project, index }: { project: any; index: number }) => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        <div className={project.images[0].span || ""}>
-          <img src={project.images[0].src} alt={project.images[0].alt} className="w-full h-72 md:h-96 object-cover rounded-sm" loading="lazy" />
+        <div className={`${project.images[0].span || ""} overflow-hidden rounded-sm`}>
+          <img src={project.images[0].src} alt={project.images[0].alt} className="w-full h-72 md:h-96 object-cover hover:scale-105 transition-transform duration-1000" loading="lazy" />
         </div>
         <div className="flex flex-col gap-4">
-          <img src={project.images[1].src} alt={project.images[1].alt} className="w-full h-44 md:h-[calc(50%-0.5rem)] object-cover rounded-sm" loading="lazy" />
-          <img src={project.images[2].src} alt={project.images[2].alt} className="w-full h-44 md:h-[calc(50%-0.5rem)] object-cover rounded-sm" loading="lazy" />
+          <div className="overflow-hidden rounded-sm h-44 md:h-[calc(50%-0.5rem)]">
+            <img src={project.images[1].src} alt={project.images[1].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" loading="lazy" />
+          </div>
+          <div className="overflow-hidden rounded-sm h-44 md:h-[calc(50%-0.5rem)]">
+            <img src={project.images[2].src} alt={project.images[2].alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" loading="lazy" />
+          </div>
         </div>
       </motion.div>
 
