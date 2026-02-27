@@ -30,78 +30,57 @@ const CountUp = ({ target, suffix = "", duration = 2 }: { target: number; suffix
 /* ─── Project Data ─── */
 const projects = [
   {
-    label: "Featured Work",
-    title: "Villa Lumière",
-    subtitle: "Brand Launch & Content Creation: Branding | Video Production | Social Media Strategy",
+    label: "Social Media | Booking Platforms | Business Strategy",
+    title: "Celanka Resort – Kandy",
+    subtitle: "Art Direction & Strategy: Celanka Resort is a calm retreat in the heart of Kandy. We partnered with the team to build a smooth guest journey, from online discovery to on-property experience.",
     images: [
-      { src: villaExterior, alt: "Villa Lumière exterior at twilight", span: "md:col-span-2" },
-      { src: villaInterior, alt: "Villa Lumière interior with warm lighting" },
-      { src: brandingFlatlay, alt: "Villa Lumière branding materials" },
+      { src: resortPool, alt: "Celanka Resort infinity pool", span: "md:col-span-2" },
+      { src: villaInterior, alt: "Luxury suite interior" },
+      { src: villaExterior, alt: "Resort exterior" },
     ],
     approach: {
       heading: "Art Direction & Strategy",
-      description: "Villa Lumière had a stunning property but needed a compelling online presence to attract high-end clientele.",
+      description: "Celanka Resort is a calm retreat in the heart of Kandy. We partnered with the team to build a smooth guest journey, from online discovery to on-property experience.",
       items: [
-        "Developed a full brand identity that reflects luxury and comfort",
-        "Produced cinematic videos with drone shots to highlight property features",
-        "Crafted a social media strategy to engage global travelers",
+        "Structured guest experience guidelines",
+        "Managed social media presence with consistent, calming visuals",
+        "Optimized and managed listings on Airbnb, Agoda & Booking.com",
+        "Set up and managed Google Business Profile for visibility and reviews",
+        "Guided reservation flow and guest communication standards",
       ],
     },
     results: [
-      { value: 20, suffix: "%", label: "increase in bookings within first month" },
-      { value: 10, suffix: "K+", label: "social interactions in first campaign" },
+      { text: "Stronger booking consistency across platforms" },
+      { text: "Improved guest experience and reviews" },
+      { text: "Clear operational structure for daily management" },
     ],
   },
   {
-    label: "Case Study",
-    title: "Maison Café",
-    subtitle: "Brand Identity & Digital Launch: Branding | Social Media | Photography",
+    label: "Drone Video | Photography",
+    title: "Peaceful Paradise Villa – Hanthana",
+    subtitle: "Art Direction & Visual Storytelling: Nestled in the hills of Hanthana, Peaceful Paradise Villa offers breathtaking views and quiet luxury. We focused on capturing the feeling of space, nature, and calm.",
     images: [
-      { src: cafeInterior, alt: "Maison Café interior", span: "md:col-span-2" },
-      { src: foodStyling, alt: "Artisan food styling" },
-      { src: brandingFlatlay, alt: "Brand materials" },
+      { src: villaExterior, alt: "Peaceful Paradise Villa exterior", span: "md:col-span-2" },
+      { src: villaInterior, alt: "Villa interior view" },
+      { src: brandingFlatlay, alt: "Visual storytelling content" },
     ],
     approach: {
-      heading: "Visual Storytelling",
-      description: "A specialty café in Bangkok needed a distinct identity to stand out in a saturated market.",
+      heading: "Art Direction & Visual Storytelling",
+      description: "Nestled in the hills of Hanthana, Peaceful Paradise Villa offers breathtaking views and quiet luxury. We focused on capturing the feeling of space, nature, and calm.",
       items: [
-        "Created a warm, artisanal brand identity with custom typography",
-        "Shot on-location content showcasing the craft behind every cup",
-        "Launched targeted social campaigns for local foodies",
+        "Cinematic drone coverage showcasing landscape and surroundings",
+        "Lifestyle and property photography for digital platforms",
+        "Visual content crafted for social media and booking platforms",
       ],
     },
     results: [
-      { value: 45, suffix: "%", label: "foot traffic increase after launch" },
-      { value: 8, suffix: "K", label: "followers gained in 3 months" },
-    ],
-  },
-  {
-    label: "Case Study",
-    title: "The Silk Hotel",
-    subtitle: "Digital Repositioning: Video | Web Design | Paid Media",
-    images: [
-      { src: hotelRooftop, alt: "Rooftop bar at sunset", span: "md:col-span-2" },
-      { src: resortPool, alt: "Resort infinity pool" },
-      { src: villaInterior, alt: "Luxury suite interior" },
-    ],
-    approach: {
-      heading: "Digital Repositioning",
-      description: "A heritage boutique hotel in Singapore wanted to attract a younger, global audience without losing its classic charm.",
-      items: [
-        "Refreshed digital presence with cinematic brand films",
-        "Redesigned the website with immersive visual storytelling",
-        "Ran performance-driven ad campaigns across Meta & Google",
-      ],
-    },
-    results: [
-      { value: 3, suffix: "x", label: "return on ad spend within 60 days" },
-      { value: 30, suffix: "%", label: "increase in direct bookings" },
+      { text: "High-impact visual assets for online listings" },
     ],
   },
 ];
 
 /* ─── Single Project Block ─── */
-const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+const ProjectBlock = ({ project, index }: { project: any; index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -125,11 +104,11 @@ const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: 
         transition={{ duration: 0.7, delay: 0.2 }}
       >
         <div className={project.images[0].span || ""}>
-          <img src={project.images[0].src} alt={project.images[0].alt} className="w-full h-72 md:h-96 object-cover" loading="lazy" />
+          <img src={project.images[0].src} alt={project.images[0].alt} className="w-full h-72 md:h-96 object-cover rounded-sm" loading="lazy" />
         </div>
         <div className="flex flex-col gap-4">
-          <img src={project.images[1].src} alt={project.images[1].alt} className="w-full h-44 md:h-[calc(50%-0.5rem)] object-cover" loading="lazy" />
-          <img src={project.images[2].src} alt={project.images[2].alt} className="w-full h-44 md:h-[calc(50%-0.5rem)] object-cover" loading="lazy" />
+          <img src={project.images[1].src} alt={project.images[1].alt} className="w-full h-44 md:h-[calc(50%-0.5rem)] object-cover rounded-sm" loading="lazy" />
+          <img src={project.images[2].src} alt={project.images[2].alt} className="w-full h-44 md:h-[calc(50%-0.5rem)] object-cover rounded-sm" loading="lazy" />
         </div>
       </motion.div>
 
@@ -144,7 +123,7 @@ const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: 
           <p className="font-body text-muted-foreground leading-relaxed mb-6">{project.approach.description}</p>
           <h4 className="font-display text-lg font-semibold text-foreground mb-3">Our Approach</h4>
           <ul className="space-y-3">
-            {project.approach.items.map((item) => (
+            {project.approach.items.map((item: string) => (
               <li key={item} className="font-body text-muted-foreground flex items-start gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                 {item}
@@ -159,13 +138,21 @@ const ProjectBlock = ({ project, index }: { project: typeof projects[0]; index: 
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <h4 className="font-display text-lg font-semibold text-foreground mb-6">Results</h4>
-          <div className="space-y-5">
-            {project.results.map((r) => (
-              <div key={r.label} className="border-l-2 border-primary pl-6">
-                <p className="font-display text-4xl md:text-5xl font-bold text-primary mb-1">
-                  <CountUp target={r.value} suffix={r.suffix} />
-                </p>
-                <p className="font-body text-muted-foreground">{r.label}</p>
+          <div className="space-y-6">
+            {project.results.map((r: any, idx: number) => (
+              <div key={idx} className="border-l-2 border-primary pl-6 py-1">
+                {r.value !== undefined ? (
+                  <>
+                    <p className="font-display text-4xl md:text-5xl font-bold text-primary mb-1">
+                      <CountUp target={r.value} suffix={r.suffix} />
+                    </p>
+                    <p className="font-body text-muted-foreground">{r.label}</p>
+                  </>
+                ) : (
+                  <p className="font-display text-xl md:text-2xl font-medium text-foreground leading-snug">
+                    {r.text}
+                  </p>
+                )}
               </div>
             ))}
           </div>
