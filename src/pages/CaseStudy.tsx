@@ -153,24 +153,25 @@ const CaseStudy = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7 }}
-                            className="bg-secondary/30 p-8 md:p-12 rounded-sm border border-border/20"
+                            className="p-0 border-none"
                         >
-                            <h2 className="text-subheading mb-12 text-foreground uppercase tracking-wider text-sm font-bold flex items-center gap-3">
-                                <span className="w-8 h-[1px] bg-primary" /> Key Results
+                            <h2 className="text-4xl font-display font-medium mb-12 text-foreground">
+                                Results
                             </h2>
-                            <div className="space-y-12">
+                            <div className="space-y-16">
                                 {project.results.map((result, idx) => (
-                                    <div key={idx} className="relative">
+                                    <div key={idx} className="relative pl-8 border-l-2 border-primary/40">
                                         {result.value !== undefined ? (
                                             <div>
-                                                <p className="text-5xl md:text-7xl font-display font-bold text-primary mb-2">
+                                                <p className="text-6xl md:text-8xl font-display font-bold text-primary mb-3 leading-none">
                                                     <CountUp target={result.value} suffix={result.suffix} />
                                                 </p>
-                                                <p className="font-body text-muted-foreground text-lg uppercase tracking-widest">{result.label}</p>
+                                                <p className="font-body text-muted-foreground text-lg md:text-xl leading-relaxed max-w-sm">
+                                                    {result.label}
+                                                </p>
                                             </div>
                                         ) : (
                                             <div className="flex items-center gap-4">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                                                 <p className="text-xl md:text-2xl font-display font-medium text-foreground leading-snug">
                                                     {result.text}
                                                 </p>

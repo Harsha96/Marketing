@@ -55,8 +55,8 @@ export const projects: Project[] = [
             ],
         },
         results: [
-            { text: "Stronger booking consistency across platforms" },
-            { text: "Improved guest experience and reviews" },
+            { value: 20, suffix: "%", label: "increase in bookings within first month" },
+            { value: 10, suffix: "K+", label: "social interactions in first campaign" },
             { text: "Clear operational structure for daily management" },
         ],
     },
@@ -80,6 +80,8 @@ export const projects: Project[] = [
             ],
         },
         results: [
+            { value: 35, suffix: "%", label: "higher engagement through visual storytelling" },
+            { value: 5, suffix: "K+", label: "total views on cinematic drone coverage" },
             { text: "High-impact visual assets for online listings" },
         ],
     },
