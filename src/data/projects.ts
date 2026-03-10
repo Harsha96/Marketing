@@ -1,9 +1,9 @@
 import villaInterior from "@/assets/villa-interior.jpg";
 import villaExterior from "@/assets/villa-exterior.jpg";
 import brandingFlatlay from "@/assets/branding-flatlay.jpg";
-import celanika1 from "@/assets/celanika1.png";
 import celanika3 from "@/assets/celanika3.png";
-import celanika5 from "@/assets/celanika5.png";
+import celanika6 from "@/assets/celanika6.png";
+import celanika7 from "@/assets/celanika7.png";
 
 export interface ProjectImage {
     src: string;
@@ -42,8 +42,8 @@ export const projects: Project[] = [
         subtitle: "Art Direction & Strategy: Celanka Resort is a calm retreat in the heart of Kandy. We partnered with the team to build a smooth guest journey, from online discovery to on-property experience.",
         images: [
             { src: celanika3, alt: "Celanka Resort luxury suite", span: "md:col-span-2" },
-            { src: celanika1, alt: "Resort lobby and architecture" },
-            { src: celanika5, alt: "Garden and outdoor area" },
+            { src: celanika6, alt: "Resort lobby and architecture" },
+            { src: celanika7, alt: "Garden and outdoor area" },
         ],
         approach: {
             heading: "Art Direction & Strategy",
